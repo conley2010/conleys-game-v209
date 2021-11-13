@@ -88,7 +88,7 @@ mySprite.setStayInScreen(true)
 mySprite.ay = 500
 let jump: number
 jump = 1
-powerjump = 6
+powerjump = 2
 
 
 scene.onOverlapTile(SpriteKind.Player, img`
