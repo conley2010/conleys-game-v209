@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.6.24/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.0","target":"arcade","targetVersion":"1.6.24"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.6.24/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"1.0.0","target":"arcade","targetVersion":"1.6.24","repo":"conley2010/conleys-game-v209"}
 // total=1558340 new=14.10% cached=80.57% other=5.33%
 (function (ectx) {
 'use strict';
@@ -449,7 +449,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P19504(s) {
+function _main___P19551(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1214,13 +1214,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P19504.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/arcade-minimap/main.ts","functionName":"<main>","argumentNames":[]}
-_main___P19504.continuations = [  ]
+_main___P19551.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/arcade-minimap/main.ts","functionName":"<main>","argumentNames":[]}
+_main___P19551.continuations = [  ]
 
-function _main___P19504_mk(s) {
+function _main___P19551_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P19504, depth: s.depth + 1,
+        parent: s, fn: _main___P19551, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -49988,5 +49988,5 @@ const sprites_BaseSpriteSayRenderer__C2024_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["transparency16___3933","tile1___3934","tile2___3935","attack___3908","powerup___3909","mapSprite___3910","mapSprite___3912","startscreen___3913","subtitle___3914","controls___3915","Controls___3916","admin___3918","number_of_jumps___3924","mySprite2___3926","attack___3925","mySprite___3927","level___3920","jump___3928","powerjump___3921","yousuck___3917","jumpcount___3923","direction___3922","text___3919","myMinimap___3931","mySprite3___3929","admin2___3930","admintext___3911"])
 
-return _main___P19504
+return _main___P19551
 })
