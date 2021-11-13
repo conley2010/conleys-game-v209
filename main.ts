@@ -1,12 +1,12 @@
 tiles.setTilemap(tilemap`level2`)
- namespace SpriteKind {
+namespace SpriteKind {
     export const attack = SpriteKind.create()
     export const powerup = SpriteKind.create()
-     export const mapSprite = SpriteKind.create()
+    export const mapSprite = SpriteKind.create()
 
 
 }
-let admintext = "admin mode activated."
+
 let mapSprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -28,16 +28,16 @@ let mapSprite = sprites.create(img`
 scene.setBackgroundColor(2)
 let startscreen = "welcome to Conleys game!"
 let subtitle = " ''map 2 made by Bryce'' "
-game.splash(startscreen,subtitle)
-let controls= "controls up=superjump"
-let Controls="space=double jump,down=map"
+game.splash(startscreen, subtitle)
+let controls = "controls up=superjump"
+let Controls = "space=double jump,down=map"
 let yousuck = "you died :("
-game.splash(controls,Controls)
+game.splash(controls, Controls)
 let admin: number
 admin = 0
 let text = "congrats on passing the level"
 
-let level:number
+let level: number
 let powerjump: number
 let direction: number
 let jumpcount: number
@@ -46,22 +46,22 @@ number_of_jumps += 1
 let attack: number
 scene.setBackgroundColor(10)
 let mySprite2 = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, attack)
 let mySprite = sprites.create(img`
     . . . . . . f f f f . . . . . .
@@ -81,7 +81,7 @@ let mySprite = sprites.create(img`
     . . . . . f f f f f f . . . . .
     . . . . . f f . . f f . . . . .
 `)
-    level=0
+level = 0
 mySprite.setKind(SpriteKind.Player)
 scene.cameraFollowSprite(mySprite)
 mySprite.setStayInScreen(true)
@@ -108,18 +108,18 @@ scene.onOverlapTile(SpriteKind.Player, img`
     4 5 4 4 4 4 5 5 5 5 4 2 4 2 2 4
     4 5 5 5 5 5 5 4 4 4 2 4 2 4 2 4
     4 5 5 5 4 4 4 4 2 2 2 2 4 2 4 4
-`, function(mysprite: Sprite, location: tiles.Location) {
-if (level == 1) {
-powerjump=2
-    game.splash(yousuck)
+`, function (mysprite: Sprite, location: tiles.Location) {
+    if (level == 1) {
+        powerjump = 2
+        game.splash(yousuck)
 
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
-}
-if (level ==0 ){
-    game.splash(yousuck)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
+    }
+    if (level == 0) {
+        game.splash(yousuck)
 
-    game.reset()
-}
+        game.reset()
+    }
 })
 scene.onOverlapTile(SpriteKind.attack, img`
     5 4 4 5 5 4 4 4 4 2 2 2 4 4 4 4
@@ -156,7 +156,7 @@ scene.onOverlapTile(SpriteKind.attack, img`
 
 
 
-tiles.placeOnTile(mySprite, tiles.getTileLocation(0,  1))
+tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 1))
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -440,7 +440,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         pause(740)
         mySprite.vx = 0
         mySprite.setKind(SpriteKind.Player)
-        console.log(text) 
     }
 
 
@@ -741,32 +740,32 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         170,
         true
     )
-  let text1 = "reeeeeeeeee"
-console.log(text1)
 
-scene.onOverlapTile(SpriteKind.Player, img`
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-    . . . . . . . . . . . . . . d d
-`, function(sprite: Sprite, location: tiles.Location) {
 
-level += 1
-    tiles.setTilemap(tilemap`level4`)
 
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
+    scene.onOverlapTile(SpriteKind.Player, img`
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+    . . . . . . . . . . . . . . d d
+`, function (sprite: Sprite, location: tiles.Location) {
+
+        level += 1
+        tiles.setTilemap(tilemap`level4`)
+
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
 
         myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
@@ -775,12 +774,12 @@ level += 1
         mapSprite.setImage(myMinimap.image)
 
         mapSprite.setPosition(60, 10)
-    mapSprite.setFlag(SpriteFlag.Invisible, true)
+        mapSprite.setFlag(SpriteFlag.Invisible, true)
 
-})
-sprites.onDestroyed(SpriteKind.Player, function(mysprite: Sprite) {
-    if (level == 1){
-    let mySprite = sprites.create(img`
+    })
+    sprites.onDestroyed(SpriteKind.Player, function (mysprite: Sprite) {
+        if (level == 1) {
+            let mySprite = sprites.create(img`
         . . . . . . f f f f . . . . . .
         . . . . f f f 2 2 f f f . . . .
         . . . f f f 2 2 2 2 f f f . . .
@@ -798,14 +797,14 @@ sprites.onDestroyed(SpriteKind.Player, function(mysprite: Sprite) {
         . . . . . f f f f f f . . . . .
         . . . . . f f . . f f . . . . .
     `)
-        tiles.setTilemap(tilemap`level4`)
+            tiles.setTilemap(tilemap`level4`)
 
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
-  
 
-    }
-})
+
+        }
+    })
 
     game.onUpdate(function () {
         if (mySprite.vy == 0 && mySprite.vx == 0) {
@@ -931,45 +930,40 @@ let mySprite3 = sprites.create(img`
     f f f f f f f f f f f f f f f
 `)
 mySprite3.setKind(SpriteKind.powerup)
-admin=1
-
-let admin2:number
-admin2=1
-forever(function() {
+admin = 1
+let admin2: number
+admin2 = 1
+forever(function () {
     controller.combos.attachCombo("u,d,a+b,a+b", function () {
-console.log(admintext)
+        if (admin == 1) {
+            admin2 = 1
+        }
+        if (admin == 0) {
+            admin2 = 0
+
+        }
+        if (admin2 == 1) {
+            controller.moveSprite(mySprite, 200, 200)
+            mySprite.ay = 0
+
+            mySprite.setFlag(SpriteFlag.Ghost, true)
+            admin = 0
+        }
+        if (admin2 == 0) {
+            admin = 1
+            powerjump = 2
+            controller.moveSprite(mySprite, 100, 0)
+            mySprite.ay = 500
+
+            mySprite.setFlag(SpriteFlag.Ghost, false)
+
+        }
 
 
-if (admin == 1) {
-admin2=1
-}   
-if (admin == 0) {
-admin2=0
+    })
+})
 
-}   
-if (admin2 == 1){
-controller.moveSprite(mySprite,200,200)
- mySprite.ay=0  
-
-    mySprite.setFlag(SpriteFlag.Ghost, true)
- admin=0
-}
-if (admin2 == 0){
-admin=1  
-    powerjump=2
-    controller.moveSprite(mySprite,100, 0)
-mySprite.ay=500
-
-    mySprite.setFlag(SpriteFlag.Ghost, false)
-
-}
-
-
-})})
-
-controller.combos.attachSpecialCode(function() {
-    
-    console.log(admintext)
+controller.combos.attachSpecialCode(function () {
     if (admin == 1) {
         admin2 = 1
     }
@@ -998,13 +992,13 @@ controller.combos.attachSpecialCode(function() {
 })
 
 
-if ( mySprite.overlapsWith(mySprite3)
- 
+if (mySprite.overlapsWith(mySprite3)
+
 ) {
-powerjump =+ 1
-mySprite3.destroy()
+    powerjump = + 1
+    mySprite3.destroy()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.powerup, function(mySprite3: Sprite, mySprite: Sprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.powerup, function (mySprite3: Sprite, mySprite: Sprite) {
     powerjump += 1
     mySprite.destroy()
 })
@@ -1020,29 +1014,29 @@ mapSprite.setImage(myMinimap.image)
 mapSprite.setFlag(SpriteFlag.Invisible, true)
 
 mapSprite.setPosition(60, 10)
-controller.down.onEvent(ControllerButtonEvent.Pressed, function() {
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     mapSprite.setFlag(SpriteFlag.Invisible, false)
-   
+
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     mapSprite.setFlag(SpriteFlag.Invisible, true)
 
 })
-forever(function() {
+forever(function () {
 
 })
 
 
-game.onUpdateInterval(100, function() {
+game.onUpdateInterval(100, function () {
     myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
-     minimap.includeSprite(myMinimap, mySprite, MinimapSpriteScale.Quadruple)
+    minimap.includeSprite(myMinimap, mySprite, MinimapSpriteScale.Quadruple)
 
     mapSprite.setImage(myMinimap.image)
 
- 
-
-}) 
-    mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
 
-  mapSprite.setPosition(60, 10)   
+})
+mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
+
+
+mapSprite.setPosition(60, 10)
